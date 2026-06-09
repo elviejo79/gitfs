@@ -25,3 +25,6 @@ build/*
 venv/
 vagrantenv/
 coverage.xml
+# Ignored by gitless cli
+test_venv/
+.venv/

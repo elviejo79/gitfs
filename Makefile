@@ -25,7 +25,8 @@ uninstall:
 	rm -rf $(DESTDIR)$(PREFIX)/bin/gitfs
 
 $(BUILD_DIR)/gitfs: $(BUILD_DIR) venv-dev
-	uv run pex -v --disable-cache -e gitfs:mount -o $(BUILD_DIR)/gitfs .
+	uv build --wheel --out-dir $(BUILD_DIR)/dist
+	uv run pex -v --disable-cache -e gitfs:mount -o $(BUILD_DIR)/gitfs --find-links $(BUILD_DIR)/dist gitfs
 
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
