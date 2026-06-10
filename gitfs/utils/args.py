@@ -79,7 +79,7 @@ class Args:
         if args.allow_other:
             args.allow_root = False
         else:
-            args.allow_root = True
+            args.allow_root = False
 
         # check log_level
         if args.debug:
